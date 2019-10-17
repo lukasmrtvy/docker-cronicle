@@ -1,5 +1,7 @@
 # docker-cronicle
 
+ENV variables: https://github.com/jhuckaby/Cronicle#environment-variables
+
 ```
 docker run -d \
 --name cronicle \
@@ -32,7 +34,7 @@ docker run -d \
     tecnativa/docker-socket-proxy
 ```
 
-# Run container from Cronicle ( didn )
+# run container from Cronicle ( didn ) -> job example
 ```
 curl \
   --silent \
