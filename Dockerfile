@@ -26,6 +26,6 @@ USER cronicle
 
 EXPOSE 3012
 
-ENTRYPOINT ["/tini", "--", "/entrypoint.sh"]
+ENTRYPOINT ["tini", "--", "/entrypoint.sh"]
 
 CMD ["sh","-c","/opt/cronicle/bin/control.sh start"]
