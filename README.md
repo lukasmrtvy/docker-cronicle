@@ -34,12 +34,15 @@ docker run -d \
     tecnativa/docker-socket-proxy
 ```
 
+# list containers -> job example
+```
+curl -s http://proxy:2375/containers/json | jq
+```
+
 # run container from Cronicle ( didn ) -> job example
 ```
-curl \
-  --silent \
-  http://dockerproxy:2375 \
-  "http:/containers/create?name=foobar" \
+curl - s \
+  "http://proxy:2375/containers/create?name=foobar" \
   -X POST \
   -H "Content-Type: application/json" \
   -d '{ "Image": "alpine:latest", "Cmd": [ "echo", "hello world" ] }' | jq '.'
