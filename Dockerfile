@@ -11,7 +11,7 @@ COPY scripts/entrypoint.sh /
 
 RUN set -xe && \
     addgroup -S $GROUP -g $GID && adduser -D -S -u $UID $USER $GROUP && \
-    apk update && apk add --no-cache tini curl npm tzdata procps && \
+    apk add -U --no-cache tini curl jq npm tzdata procps && \
     mkdir -p /opt/cronicle && curl -sSL https://github.com/jhuckaby/Cronicle/archive/v${VERSION}.tar.gz | tar xz --strip-components=1 -C /opt/cronicle && \
     cd /opt/cronicle && npm install && \
     node bin/build.js dist && \
