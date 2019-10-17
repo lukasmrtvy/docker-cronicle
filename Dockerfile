@@ -16,7 +16,7 @@ RUN set -xe && \
     cd /opt/cronicle && npm install && \
     node bin/build.js dist && \
     mkdir -p /opt/cronicle/data  /opt/cronicle/logs /opt/cronicle/plugins && chown -R $USER:$GROUP /opt/cronicle && \
-    chmod +x entrypoint.sh
+    chmod +x /entrypoint.sh
 
 WORKDIR /opt/cronicle/bin/
 
